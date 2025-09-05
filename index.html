@@ -12,6 +12,8 @@
       background: #0d0d0d;
       color: #eaeaea;
       display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* Sidebar */
@@ -48,19 +50,21 @@
     .main {
       margin-left: 220px;
       flex: 1;
-      transition: margin 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
     header {
-  background: linear-gradient(90deg, #8a2be2, #39ff14);
-  padding: 20px;
-  text-align: left;   /* align left */
-  padding-left: 20px; /* small inner padding */
-  color: white;
-}
+      background: linear-gradient(90deg, #8a2be2, #39ff14);
+      padding: 20px;
+      text-align: left;
+      padding-left: 20px;
+      color: white;
+    }
     .container {
       width: 95%;
       max-width: 1200px;
       margin: 20px auto;
+      flex: 1;
     }
     .card {
       background: #1a1a1a;
@@ -125,6 +129,26 @@
       rx: 5;
     }
 
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      border-top: 1px solid #39ff14;
+      color: #eaeaea;
+      font-size: 0.95em;
+      margin-top: auto;
+    }
+    footer a {
+      color: #39ff14;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 8px;
+    }
+    footer a:hover {
+      color: #8a2be2;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .sidebar {
@@ -135,6 +159,9 @@
       }
       .main {
         margin-left: 60px;
+      }
+      header {
+        padding-left: 10px;
       }
     }
   </style>
@@ -151,19 +178,19 @@
   </div>
 
   <!-- Main -->
-<div class="main">
-  <header>
-    <h1>SuryaNova Dashboard</h1>
-    <p>From Sunlight to Insights</p>
-  </header>
+  <div class="main">
+    <header>
+      <h1>SuryaNova Dashboard</h1>
+      <p>From Sunlight to Insights</p>
+    </header>
 
-  <div class="container">
+    <div class="container">
 
-    <!-- Greeting -->
-    <div class="card" style="margin-top:20px; text-align:left;">
-      <h2>Hi, Aakansha!</h2>
-      <p>Here are your potential energy insights:</p>
-    </div>
+      <!-- Greeting -->
+      <div class="card" style="margin-top:20px; text-align:left;">
+        <h2>Hi, Aakansha!</h2>
+        <p>Here are your potential energy insights:</p>
+      </div>
 
       <!-- Rooftop Map -->
       <div class="card" id="home">
@@ -207,31 +234,41 @@
         </div>
       </div>
 
-  
+      <!-- Chart -->
       <div class="card" id="impact">
-  <h2>Energy Generation Chart</h2>
-  <svg width="100%" height="280" viewBox="0 0 900 280">
-    <!-- Bars -->
-    <rect x="60" y="100" width="50" height="120" fill="#39ff14"></rect>
-    <rect x="160" y="80" width="50" height="140" fill="#8a2be2"></rect>
-    <rect x="260" y="60" width="50" height="160" fill="#39ff14"></rect>
-    <rect x="360" y="50" width="50" height="170" fill="#8a2be2"></rect>
-    <rect x="460" y="70" width="50" height="150" fill="#39ff14"></rect>
-    <rect x="560" y="110" width="50" height="110" fill="#8a2be2"></rect>
+        <h2>Energy Generation Chart</h2>
+        <svg width="100%" height="280" viewBox="0 0 900 280">
+          <!-- Bars -->
+          <rect x="60" y="100" width="50" height="120" fill="#39ff14"></rect>
+          <rect x="160" y="80" width="50" height="140" fill="#8a2be2"></rect>
+          <rect x="260" y="60" width="50" height="160" fill="#39ff14"></rect>
+          <rect x="360" y="50" width="50" height="170" fill="#8a2be2"></rect>
+          <rect x="460" y="70" width="50" height="150" fill="#39ff14"></rect>
+          <rect x="560" y="110" width="50" height="110" fill="#8a2be2"></rect>
 
-    <!-- X axis labels (with extra gap) -->
-    <text x="70" y="260" fill="#eaeaea">Jan</text>
-    <text x="170" y="260" fill="#eaeaea">Feb</text>
-    <text x="270" y="260" fill="#eaeaea">Mar</text>
-    <text x="370" y="260" fill="#eaeaea">Apr</text>
-    <text x="470" y="260" fill="#eaeaea">May</text>
-    <text x="570" y="260" fill="#eaeaea">Jun</text>
-  </svg>
-  <p><i>Estimated monthly solar generation (kWh)</i></p>
-</div>
+          <!-- X axis labels -->
+          <text x="70" y="260" fill="#eaeaea">Jan</text>
+          <text x="170" y="260" fill="#eaeaea">Feb</text>
+          <text x="270" y="260" fill="#eaeaea">Mar</text>
+          <text x="370" y="260" fill="#eaeaea">Apr</text>
+          <text x="470" y="260" fill="#eaeaea">May</text>
+          <text x="570" y="260" fill="#eaeaea">Jun</text>
+        </svg>
+        <p><i>Estimated monthly solar generation (kWh)</i></p>
+      </div>
+    </div>
 
+    <!-- Footer -->
+    <footer>
+      <p>👩‍💻 Built with ❤️ by Team Sunergy</p>
+      <p>
+        <a href="https://github.com/aakanshajagga14" target="_blank">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/aakansha-jagga-0aa10527a/" target="_blank">LinkedIn</a>
+      </p>
+    </footer>
+  </div>
 
-  <!-- Counter Animation Script -->
+  <!-- Counter Animation -->
   <script>
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
@@ -248,6 +285,5 @@
       }, 20);
     });
   </script>
-
 </body>
 </html>
