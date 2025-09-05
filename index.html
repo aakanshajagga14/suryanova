@@ -2,103 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SuryaNova Dashboard</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #0d1117;
-      color: #e5e5e5;
-    }
-    header {
-      background: linear-gradient(90deg, #ff9800, #ff5722);
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-    .container {
-      padding: 20px;
-    }
-    .card {
-      background: #161b22;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-    h2 {
-      color: #ffb74d;
-    }
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-    }
-    .stat-box {
-      background: #1f2937;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      flex: 1;
-      margin: 0 10px;
-    }
-    .stat-box h3 {
-      color: #4cafef;
-      margin: 5px 0;
-    }
-    .map-placeholder {
-      background: #2c3e50;
-      height: 300px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #aaa;
-      font-style: italic;
-    }
-  </style>
 </head>
 <body>
+  <h1>🌞 SuryaNova Dashboard</h1>
+  <p><i>From Sunlight to Insights</i></p>
 
-  <header>
-    <h1>🌞 SuryaNova Dashboard</h1>
-    <p>From Sunlight to Insights</p>
-  </header>
+  <h2>AI Rooftop Detection</h2>
+  <img src="https://tse4.mm.bing.net/th/id/OIP.kquZih6kMboAvq-WC_Kb8wHaD3?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Rooftop Detection Map" width="500">
 
-  <div class="container">
-    <!-- Rooftop Map Section -->
-    <div class="card">
-      <h2>AI Rooftop Detection</h2>
-      <div class="map-placeholder">[ Rooftop Map Preview ]</div>
-    </div>
+  <h2>Solar Insights</h2>
+  <ul>
+    <li>Annual Energy: <b>4,200 kWh</b></li>
+    <li>CO₂ Saved: <b>6.3 Tons</b></li>
+    <li>Annual Savings: <b>₹32,000</b></li>
+  </ul>
 
-    <!-- Stats Section -->
-    <div class="card">
-      <h2>Solar Insights</h2>
-      <div class="stats">
-        <div class="stat-box">
-          <p>Annual Energy</p>
-          <h3>4,200 kWh</h3>
-        </div>
-        <div class="stat-box">
-          <p>CO₂ Saved</p>
-          <h3>6.3 Tons</h3>
-        </div>
-        <div class="stat-box">
-          <p>Annual Savings</p>
-          <h3>₹32,000</h3>
-        </div>
-      </div>
-    </div>
+  <h2>Subsidy & ROI</h2>
+  <p>Government MNRE subsidy available: <b>₹45,000</b></p>
+  <p>ROI Period: <b>3.5 years</b></p>
 
-    <!-- Subsidy Section -->
-    <div class="card">
-      <h2>Subsidy & ROI</h2>
-      <p>Government MNRE subsidy available: <b>₹45,000</b></p>
-      <p>ROI Period: <b>3.5 years</b></p>
-    </div>
-  </div>
+  <h2>Energy Generation Chart</h2>
+  <!-- Simple bar chart using SVG -->
+  <svg width="500" height="200" style="border:1px solid #ccc">
+    <!-- X axis labels -->
+    <text x="50" y="190">Jan</text>
+    <text x="100" y="190">Feb</text>
+    <text x="150" y="190">Mar</text>
+    <text x="200" y="190">Apr</text>
+    <text x="250" y="190">May</text>
+    <text x="300" y="190">Jun</text>
+
+    <!-- Bars (height = energy generated) -->
+    <rect x="50" y="100" width="30" height="80" fill="orange"></rect>
+    <rect x="100" y="80" width="30" height="100" fill="orange"></rect>
+    <rect x="150" y="60" width="30" height="120" fill="orange"></rect>
+    <rect x="200" y="50" width="30" height="130" fill="orange"></rect>
+    <rect x="250" y="70" width="30" height="110" fill="orange"></rect>
+    <rect x="300" y="90" width="30" height="90" fill="orange"></rect>
+  </svg>
+  <p><i>Estimated monthly solar generation (kWh)</i></p>
 
 </body>
 </html>
