@@ -50,8 +50,6 @@
     .main {
       margin-left: 220px;
       flex: 1;
-      display: flex;
-      flex-direction: column;
     }
     header {
       background: linear-gradient(90deg, #8a2be2, #39ff14);
@@ -64,7 +62,6 @@
       width: 95%;
       max-width: 1200px;
       margin: 20px auto;
-      flex: 1;
     }
     .card {
       background: #1a1a1a;
@@ -129,6 +126,20 @@
       rx: 5;
     }
 
+    /* Progress bar for Karma Points */
+    progress {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    progress::-webkit-progress-bar {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+    }
+    progress::-webkit-progress-value {
+      background: linear-gradient(90deg, #39ff14, #8a2be2);
+      border-radius: 10px;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -138,6 +149,7 @@
       color: #eaeaea;
       font-size: 0.95em;
       margin-top: auto;
+      border-radius: 8px 8px 0 0;
     }
     footer a {
       color: #39ff14;
@@ -160,9 +172,6 @@
       .main {
         margin-left: 60px;
       }
-      header {
-        padding-left: 10px;
-      }
     }
   </style>
 </head>
@@ -173,6 +182,7 @@
     <h2>SuryaNova</h2>
     <a href="#home" class="nav-link">🏠 Home</a>
     <a href="#dashboard" class="nav-link">📊 Dashboard</a>
+    <a href="#karma" class="nav-link">🌱 Karma</a>
     <a href="#subsidy" class="nav-link">💰 Subsidy</a>
     <a href="#impact" class="nav-link">🌍 Impact</a>
   </div>
@@ -220,6 +230,18 @@
         </div>
       </div>
 
+      <!-- Karma Points -->
+      <div class="card" id="karma">
+        <h2>Karma Points 🌱</h2>
+        <div class="stat-box" style="margin: 0 auto; max-width: 300px;">
+          <p>Total Karma Earned</p>
+          <h3 class="counter" data-target="4200">0</h3>
+          <p>Points</p>
+          <progress value="4200" max="5000" style="width:100%; height:20px; border-radius:10px;"></progress>
+          <p><i>Each kWh saved = 1 Karma Point</i></p>
+        </div>
+      </div>
+
       <!-- Subsidies -->
       <div class="card" id="subsidy">
         <h2>Available Subsidies</h2>
@@ -234,7 +256,7 @@
         </div>
       </div>
 
-      <!-- Chart -->
+      <!-- Impact Chart -->
       <div class="card" id="impact">
         <h2>Energy Generation Chart</h2>
         <svg width="100%" height="280" viewBox="0 0 900 280">
@@ -246,7 +268,7 @@
           <rect x="460" y="70" width="50" height="150" fill="#39ff14"></rect>
           <rect x="560" y="110" width="50" height="110" fill="#8a2be2"></rect>
 
-          <!-- X axis labels -->
+          <!-- X axis labels (with extra gap) -->
           <text x="70" y="260" fill="#eaeaea">Jan</text>
           <text x="170" y="260" fill="#eaeaea">Feb</text>
           <text x="270" y="260" fill="#eaeaea">Mar</text>
@@ -256,6 +278,7 @@
         </svg>
         <p><i>Estimated monthly solar generation (kWh)</i></p>
       </div>
+
     </div>
 
     <!-- Footer -->
@@ -266,9 +289,10 @@
         <a href="https://www.linkedin.com/in/aakansha-jagga-0aa10527a/" target="_blank">LinkedIn</a>
       </p>
     </footer>
+
   </div>
 
-  <!-- Counter Animation -->
+  <!-- Counter Animation Script -->
   <script>
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
@@ -285,5 +309,6 @@
       }, 20);
     });
   </script>
+
 </body>
 </html>
