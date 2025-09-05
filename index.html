@@ -9,11 +9,47 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #0d0d0d; /* Black background */
-      color: #eaeaea; /* Light text */
+      background: #0d0d0d;
+      color: #eaeaea;
+      display: flex;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #111;
+      height: 100vh;
+      padding-top: 20px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.6);
+    }
+    .sidebar h2 {
+      text-align: center;
+      color: #39ff14;
+      margin-bottom: 30px;
+    }
+    .nav-link {
+      padding: 15px 20px;
+      color: #eaeaea;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      background: #1a1a1a;
+      color: #8a2be2;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 220px;
+      flex: 1;
     }
     header {
-      background: linear-gradient(90deg, #8a2be2, #39ff14); /* lilac to neon green */
+      background: linear-gradient(90deg, #8a2be2, #39ff14);
       padding: 20px;
       text-align: center;
       color: white;
@@ -30,11 +66,8 @@
       margin-bottom: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     }
-    h1, h2 {
-      margin-top: 0;
-    }
     h2 {
-      color: #39ff14; /* neon green */
+      color: #39ff14;
     }
     ul {
       list-style: none;
@@ -45,7 +78,7 @@
       font-size: 1.1em;
     }
     b {
-      color: #8a2be2; /* lilac highlight */
+      color: #8a2be2;
     }
     img {
       display: block;
@@ -81,74 +114,87 @@
       padding: 10px;
     }
     svg rect {
-      rx: 5; /* rounded bars */
+      rx: 5;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>SuryaNova Dashboard</h1>
-    <p>From Sunlight to Insights</p>
-  </header>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>SuryaNova</h2>
+    <a href="#" class="nav-link">🏠 Home</a>
+    <a href="#" class="nav-link">📊 Dashboard</a>
+    <a href="#" class="nav-link">💰 Subsidy</a>
+    <a href="#" class="nav-link">🌍 Impact</a>
+    <a href="#" class="nav-link">⚙️ Settings</a>
+  </div>
 
-  <div class="container">
+  <!-- Main -->
+  <div class="main">
+    <header>
+      <h1>SuryaNova Dashboard</h1>
+      <p>From Sunlight to Insights</p>
+    </header>
 
-    <!-- Rooftop Map -->
-    <div class="card">
-      <h2>AI Rooftop Detection</h2>
-      <img src="https://user-images.githubusercontent.com/22872200/47620059-c3bf0880-db0b-11e8-97fa-a353c0c9585c.png" alt="Rooftop Detection Map">
-    </div>
+    <div class="container">
 
-    <!-- Stats -->
-    <div class="card">
-      <h2>Solar Insights</h2>
-      <div class="stats">
-        <div class="stat-box">
-          <p>Annual Energy</p>
-          <h3>4,200 kWh</h3>
-        </div>
-        <div class="stat-box">
-          <p>CO₂ Saved</p>
-          <h3>6.3 Tons</h3>
-        </div>
-        <div class="stat-box">
-          <p>Annual Savings</p>
-          <h3>₹32,000</h3>
+      <!-- Rooftop Map -->
+      <div class="card">
+        <h2>AI Rooftop Detection</h2>
+        <img src="https://user-images.githubusercontent.com/22872200/47620059-c3bf0880-db0b-11e8-97fa-a353c0c9585c.png" alt="Rooftop Detection Map">
+      </div>
+
+      <!-- Stats -->
+      <div class="card">
+        <h2>Solar Insights</h2>
+        <div class="stats">
+          <div class="stat-box">
+            <p>Annual Energy</p>
+            <h3>4,200 kWh</h3>
+          </div>
+          <div class="stat-box">
+            <p>CO₂ Saved</p>
+            <h3>6.3 Tons</h3>
+          </div>
+          <div class="stat-box">
+            <p>Annual Savings</p>
+            <h3>₹32,000</h3>
+          </div>
         </div>
       </div>
+
+      <!-- Subsidy -->
+      <div class="card">
+        <h2>Subsidy & ROI</h2>
+        <p>Government MNRE subsidy available: <b>₹45,000</b></p>
+        <p>ROI Period: <b>3.5 years</b></p>
+      </div>
+
+      <!-- Graph -->
+      <div class="card">
+        <h2>Energy Generation Chart</h2>
+        <svg width="800" height="250">
+          <!-- X axis labels -->
+          <text x="60" y="230" fill="#eaeaea">Jan</text>
+          <text x="130" y="230" fill="#eaeaea">Feb</text>
+          <text x="200" y="230" fill="#eaeaea">Mar</text>
+          <text x="270" y="230" fill="#eaeaea">Apr</text>
+          <text x="340" y="230" fill="#eaeaea">May</text>
+          <text x="410" y="230" fill="#eaeaea">Jun</text>
+
+          <!-- Bars -->
+          <rect x="60" y="150" width="40" height="70" fill="#39ff14"></rect>
+          <rect x="130" y="130" width="40" height="90" fill="#8a2be2"></rect>
+          <rect x="200" y="100" width="40" height="120" fill="#39ff14"></rect>
+          <rect x="270" y="90" width="40" height="130" fill="#8a2be2"></rect>
+          <rect x="340" y="110" width="40" height="110" fill="#39ff14"></rect>
+          <rect x="410" y="140" width="40" height="80" fill="#8a2be2"></rect>
+        </svg>
+        <p><i>Estimated monthly solar generation (kWh)</i></p>
+      </div>
+
     </div>
-
-    <!-- Subsidy -->
-    <div class="card">
-      <h2>Subsidy & ROI</h2>
-      <p>Government MNRE subsidy available: <b>₹45,000</b></p>
-      <p>ROI Period: <b>3.5 years</b></p>
-    </div>
-
-    <!-- Graph -->
-    <div class="card">
-      <h2>Energy Generation Chart</h2>
-      <svg width="800" height="350">
-        <!-- X axis labels -->
-        <text x="60" y="230" fill="#eaeaea">Jan</text>
-        <text x="130" y="230" fill="#eaeaea">Feb</text>
-        <text x="200" y="230" fill="#eaeaea">Mar</text>
-        <text x="270" y="230" fill="#eaeaea">Apr</text>
-        <text x="340" y="230" fill="#eaeaea">May</text>
-        <text x="410" y="230" fill="#eaeaea">Jun</text>
-
-        <!-- Bars -->
-        <rect x="60" y="150" width="40" height="70" fill="#39ff14"></rect>
-        <rect x="130" y="130" width="40" height="90" fill="#8a2be2"></rect>
-        <rect x="200" y="100" width="40" height="120" fill="#39ff14"></rect>
-        <rect x="270" y="90" width="40" height="130" fill="#8a2be2"></rect>
-        <rect x="340" y="110" width="40" height="110" fill="#39ff14"></rect>
-        <rect x="410" y="140" width="40" height="80" fill="#8a2be2"></rect>
-      </svg>
-      <p><i>Estimated monthly solar generation (kWh)</i></p>
-    </div>
-
   </div>
 
 </body>
