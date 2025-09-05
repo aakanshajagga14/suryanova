@@ -105,6 +105,13 @@
       font-size: 1.8em;
       margin: 10px 0;
     }
+    .subsidy-box {
+      background: #111;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      border: 1px solid #8a2be2;
+    }
     svg {
       display: block;
       margin: 20px auto;
@@ -140,17 +147,22 @@
     <a href="#dashboard" class="nav-link">📊 Dashboard</a>
     <a href="#subsidy" class="nav-link">💰 Subsidy</a>
     <a href="#impact" class="nav-link">🌍 Impact</a>
-    <a href="#settings" class="nav-link">⚙️ Settings</a>
   </div>
 
   <!-- Main -->
-  <div class="main">
-    <header>
-      <h1>🌞 SuryaNova Dashboard</h1>
-      <p>From Sunlight to Insights</p>
-    </header>
+  <header>
+  <h1>SuryaNova Dashboard</h1>
+  <p>From Sunlight to Insights</p>
+</header>
 
-    <div class="container">
+<div class="container">
+
+  <!-- Greeting -->
+  <div class="card">
+    <h2>Hi, Aakansha 👋</h2>
+    <p>Here are your potential energy insights:</p>
+  </div>
+
 
       <!-- Rooftop Map -->
       <div class="card" id="home">
@@ -180,49 +192,41 @@
         </div>
       </div>
 
-      <!-- Subsidy -->
+      <!-- Subsidies -->
       <div class="card" id="subsidy">
-        <h2>Subsidy & ROI</h2>
-        <p>Government MNRE subsidy available: <b>₹45,000</b></p>
-        <p>ROI Period: <b>3.5 years</b></p>
+        <h2>Available Subsidies</h2>
+        <div class="subsidy-box">
+          <p><b>Central MNRE Subsidy:</b> ₹45,000 (Up to 40% of system cost)</p>
+        </div>
+        <div class="subsidy-box">
+          <p><b>Delhi State Subsidy:</b> ₹20,000 additional benefit</p>
+        </div>
+        <div class="subsidy-box">
+          <p><b>Total Effective Subsidy:</b> ₹65,000</p>
+        </div>
       </div>
 
       <!-- Graph -->
       <div class="card" id="impact">
         <h2>Energy Generation Chart</h2>
-        <svg width="100%" height="250" viewBox="0 0 800 250">
+        <svg width="100%" height="250" viewBox="0 0 900 250">
           <!-- X axis labels -->
-          <text x="60" y="230" fill="#eaeaea">Jan</text>
-          <text x="130" y="230" fill="#eaeaea">Feb</text>
-          <text x="200" y="230" fill="#eaeaea">Mar</text>
-          <text x="270" y="230" fill="#eaeaea">Apr</text>
-          <text x="340" y="230" fill="#eaeaea">May</text>
-          <text x="410" y="230" fill="#eaeaea">Jun</text>
+          <text x="70" y="230" fill="#eaeaea">Jan</text>
+          <text x="160" y="230" fill="#eaeaea">Feb</text>
+          <text x="250" y="230" fill="#eaeaea">Mar</text>
+          <text x="340" y="230" fill="#eaeaea">Apr</text>
+          <text x="430" y="230" fill="#eaeaea">May</text>
+          <text x="520" y="230" fill="#eaeaea">Jun</text>
 
-          <!-- Bars -->
-          <rect x="60" y="150" width="40" height="70" fill="#39ff14"></rect>
-          <rect x="130" y="130" width="40" height="90" fill="#8a2be2"></rect>
-          <rect x="200" y="100" width="40" height="120" fill="#39ff14"></rect>
-          <rect x="270" y="90" width="40" height="130" fill="#8a2be2"></rect>
-          <rect x="340" y="110" width="40" height="110" fill="#39ff14"></rect>
-          <rect x="410" y="140" width="40" height="80" fill="#8a2be2"></rect>
+          <!-- Bars with spacing -->
+          <rect x="60" y="150" width="50" height="70" fill="#39ff14"></rect>
+          <rect x="150" y="130" width="50" height="90" fill="#8a2be2"></rect>
+          <rect x="240" y="100" width="50" height="120" fill="#39ff14"></rect>
+          <rect x="330" y="90" width="50" height="130" fill="#8a2be2"></rect>
+          <rect x="420" y="110" width="50" height="110" fill="#39ff14"></rect>
+          <rect x="510" y="140" width="50" height="80" fill="#8a2be2"></rect>
         </svg>
         <p><i>Estimated monthly solar generation (kWh)</i></p>
-      </div>
-
-      <!-- Settings Page -->
-      <div class="card" id="settings">
-        <h2>⚙️ Settings</h2>
-        <form>
-          <label>Enter Location:</label><br>
-          <input type="text" placeholder="Delhi, India" style="width:100%;padding:10px;border-radius:5px;border:none;margin:10px 0;"><br>
-          <label>Theme:</label><br>
-          <select style="width:100%;padding:10px;border-radius:5px;border:none;margin:10px 0;">
-            <option>Dark Mode</option>
-            <option>Light Mode</option>
-          </select><br>
-          <button style="background:#39ff14;color:#0d0d0d;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;">Save</button>
-        </form>
       </div>
 
     </div>
@@ -234,7 +238,7 @@
     counters.forEach(counter => {
       const target = parseFloat(counter.getAttribute('data-target'));
       let current = 0;
-      const step = target / 100; // 100 steps
+      const step = target / 100; 
       const interval = setInterval(() => {
         current += step;
         if (current >= target) {
